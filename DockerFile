@@ -1,0 +1,11 @@
+docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v "D:\docker_data\postgres\ny_taxi_postgres_data":/var/lib/postgresql/data \
+  -p 54320:5432 \
+  --network=pg-network \
+  --name pg-database \
+  postgres:13
+
+  docker run --name pg-database -e POSTGRES_PASSWORD=postgres -d -p 54320:5432 -v C:\docker\postgres:/var/lib/postgresql/data  postgres --network=pg-network 
